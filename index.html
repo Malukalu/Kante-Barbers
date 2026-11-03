@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Kante Barbers Aachen: Fades, Bartpflege und Nassrasur. Termin online buchen.">
+<style>[hidden]{display:none!important}body{margin:0}</style>
+<title>KANTE Barbers Aachen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gloock&family=Manrope:wght@400;500;700;800&display=swap">
+<style>
+/* Layout: geteiltes Hero (Typo links, hohes Ladenfoto rechts), Laufband, Haltung + Werkzeugfoto, Preisliste, Foto-Galerie mit Lightbox, Terminbuchung, Öffnungszeiten */
+:root{
+  --ink:#0e100f; --ink-2:#161917; --ink-3:#202421; --line:#2c312d;
+  --bone:#ece6da; --stone:#a7a597; --sage:#8fae96; --brass:#c9a25e;
+  --serif:"Gloock","Bodoni 72",Didot,Georgia,serif; --sans:"Manrope",system-ui,-apple-system,sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--bone);font:16px/1.65 var(--sans);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wrap{max-width:1240px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+.label{font:700 12px/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--brass)}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--bone);color:var(--ink);text-decoration:none;font:800 14px var(--sans);letter-spacing:.06em;text-transform:uppercase;padding:16px 26px;border:0;cursor:pointer;transition:background .2s,transform .2s}
+.btn:hover{background:var(--brass);transform:translateY(-2px)}
+.btn.line{background:transparent;color:var(--bone);box-shadow:inset 0 0 0 1px var(--line)}
+.btn.line:hover{box-shadow:inset 0 0 0 1px var(--brass);color:var(--brass);background:transparent}
+:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
+
+/* Navigation */
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(14,16,15,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--ink)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:72px;gap:16px}
+.logo{font:400 28px/1 var(--serif);letter-spacing:.02em;text-decoration:none}
+.logo small{font:700 10px var(--sans);letter-spacing:.3em;color:var(--stone);margin-left:10px;vertical-align:middle}
+.links{display:flex;gap:30px;font-weight:600;font-size:14px}
+.links a{text-decoration:none;color:var(--stone);transition:color .2s}
+.links a:hover{color:var(--bone)}
+nav .btn{padding:12px 20px;font-size:12px}
+
+/* Hero */
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;padding-block:64px 80px}
+h1{font:400 clamp(58px,8.4vw,118px)/.92 var(--serif);margin:22px 0 28px;letter-spacing:-.01em;text-wrap:balance}
+h1 em{font-style:normal;color:var(--sage)}
+.intro{color:var(--stone);font-size:18px;max-width:44ch;margin:0}
+.cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:36px}
+.facts{display:flex;gap:40px;flex-wrap:wrap;margin-top:48px;padding-top:28px;border-top:1px solid var(--line)}
+.facts b{display:block;font:400 34px/1 var(--serif);color:var(--bone)}
+.facts span{font-size:13px;color:var(--stone)}
+.frame{position:relative;aspect-ratio:4/5;overflow:hidden;max-width:100%}
+.frame img{width:100%;height:100%;object-fit:cover;object-position:50% 45%;animation:drift 18s ease-in-out infinite alternate}
+@keyframes drift{from{transform:scale(1.04)}to{transform:scale(1.12) translateY(-1.5%)}}
+.frame::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 0 1px rgba(236,230,218,.12);pointer-events:none}
+.stamp{position:absolute;left:-22px;bottom:34px;background:var(--brass);color:var(--ink);font:800 11px/1.3 var(--sans);letter-spacing:.18em;text-transform:uppercase;padding:14px 18px}
+
+/* Laufband */
+.ticker{border-block:1px solid var(--line);overflow:hidden;white-space:nowrap;background:var(--ink-2)}
+.ticker div{display:inline-block;padding-block:18px;animation:run 32s linear infinite;font:400 26px var(--serif);color:var(--stone)}
+.ticker span{color:var(--brass);margin:0 26px;font-size:16px;vertical-align:middle}
+@keyframes run{to{transform:translateX(-50%)}}
+
+section{padding-block:110px}
+h2{font:400 clamp(42px,5.6vw,76px)/1 var(--serif);margin:18px 0 22px;letter-spacing:-.01em;text-wrap:balance}
+.lead{color:var(--stone);font-size:18px;max-width:52ch;margin:0}
+
+/* Haltung */
+.about .wrap{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.about figure{margin:0;position:relative}
+.about figure img{width:100%;aspect-ratio:1/0.85;object-fit:cover}
+.about figcaption{font-size:13px;color:var(--stone);margin-top:12px}
+.points{display:grid;gap:22px;margin-top:36px}
+.points>div{display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:start}
+.points i{font:400 26px/1 var(--serif);font-style:normal;color:var(--brass)}
+.points b{display:block;font-size:17px}
+.points p{margin:2px 0 0;color:var(--stone);font-size:15px}
+
+/* Preise */
+.prices{background:var(--ink-2);border-block:1px solid var(--line)}
+.prices-head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:44px}
+.menu{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 72px}
+.row{display:grid;grid-template-columns:1fr auto;gap:6px 18px;padding:24px 0;border-bottom:1px solid var(--line)}
+.row h3{margin:0;font:400 26px/1.15 var(--serif)}
+.row p{grid-column:1;margin:0;color:var(--stone);font-size:14px}
+.row .p{grid-row:1/3;grid-column:2;align-self:center;font:400 30px var(--serif);color:var(--brass);font-variant-numeric:tabular-nums}
+.row .min{font:700 11px var(--sans);letter-spacing:.14em;color:var(--sage);text-transform:uppercase;margin-left:10px;vertical-align:middle}
+
+/* Galerie */
+.gallery{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-auto-rows:120px;gap:14px;margin-top:48px}
+.gallery button{all:unset;cursor:zoom-in;position:relative;overflow:hidden;display:block}
+.gallery button:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
+.gallery img{width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.2,.7,.2,1),filter .4s;filter:saturate(.9)}
+.gallery button:hover img{transform:scale(1.06);filter:saturate(1.05)}
+.gallery .g1{grid-column:1/6;grid-row:span 5}
+.gallery .g2{grid-column:6/13;grid-row:span 3}
+.gallery .g3{grid-column:6/9;grid-row:span 4}
+.gallery .g4{grid-column:9/13;grid-row:span 4}
+.gallery .g5{grid-column:1/6;grid-row:span 2}
+.g1 img{object-position:50% 40%}.g3 img{object-position:55% 30%}
+.lb{position:fixed;inset:0;z-index:50;background:rgba(8,9,8,.94);display:grid;place-items:center;padding:max(24px,env(safe-area-inset-top,0px)) max(24px,env(safe-area-inset-right,0px)) max(24px,env(safe-area-inset-bottom,0px)) max(24px,env(safe-area-inset-left,0px))}
+.lb[hidden]{display:none}
+.lb img{max-height:86vh;max-width:min(1100px,100%);object-fit:contain}
+.lb button{position:absolute;top:max(18px,env(safe-area-inset-top,0px));right:max(18px,env(safe-area-inset-right,0px));background:var(--bone);color:var(--ink);border:0;font:800 13px var(--sans);letter-spacing:.1em;padding:12px 16px;cursor:pointer}
+
+/* Termin */
+.book .wrap{display:grid;grid-template-columns:1fr 1fr;gap:72px}
+form{display:grid;gap:22px}
+fieldset{border:0;margin:0;padding:0;display:grid;gap:10px}
+legend,label{font:700 12px var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--stone);margin-bottom:10px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips input{position:absolute;opacity:0;pointer-events:none}
+.chips label{margin:0;cursor:pointer;border:1px solid var(--line);padding:11px 16px;font:600 14px var(--sans);letter-spacing:0;text-transform:none;color:var(--bone);transition:all .15s}
+.chips input:checked+label{background:var(--bone);color:var(--ink);border-color:var(--bone)}
+.chips input:focus-visible+label{outline:2px solid var(--brass);outline-offset:2px}
+.field{display:grid}
+.field input,.field select{background:var(--ink-2);border:1px solid var(--line);color:var(--bone);font:16px var(--sans);padding:15px 16px;border-radius:0}
+.field input:focus,.field select:focus{border-color:var(--brass);outline:none}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.done{border-left:2px solid var(--sage);padding:14px 18px;background:var(--ink-2);color:var(--bone)}
+.info{display:grid;gap:40px;align-content:start}
+.hours div{display:flex;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--line);font-variant-numeric:tabular-nums}
+.hours div span{color:var(--stone)}
+.hours .today{color:var(--brass)}
+.hours .today span{color:var(--brass)}
+.addr{font:400 30px/1.2 var(--serif)}
+.addr small{display:block;font:15px var(--sans);color:var(--stone);margin-top:10px}
+
+footer{border-top:1px solid var(--line);padding-block:36px;color:var(--stone);font-size:13px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.credit{color:var(--stone)}
+.credit b{color:var(--bone)}
+
+@media (max-width:900px){
+  .links{display:none}
+  .hero .wrap,.about .wrap,.book .wrap{grid-template-columns:1fr;gap:44px}
+  .hero .wrap{padding-block:36px 60px}
+  .frame{aspect-ratio:4/4.4}
+  .stamp{left:12px}
+  .menu{grid-template-columns:1fr}
+  section{padding-block:76px}
+  .gallery{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:150px}
+  .gallery{grid-auto-rows:auto;gap:10px}
+  .gallery .g1,.gallery .g2,.gallery .g3,.gallery .g4,.gallery .g5{grid-column:auto;grid-row:auto;aspect-ratio:3/4}
+  .gallery .g2,.gallery .g5{grid-column:1/-1;aspect-ratio:16/10}
+  .gallery .g1{grid-column:1/-1;aspect-ratio:4/5}
+}
+@media (max-width:480px){.two{grid-template-columns:1fr}.facts{gap:26px}}
+@media (prefers-reduced-motion:reduce){.frame img,.ticker div{animation:none}.gallery img,.btn{transition:none}}
+</style>
+
+</head>
+<body>
+<nav><div class="wrap">
+  <a class="logo" href="#top">Kante<small>BARBERS</small></a>
+  <div class="links"><a href="#haltung">Über uns</a><a href="#preise">Preise</a><a href="#galerie">Galerie</a><a href="#termin">Kontakt</a></div>
+  <a class="btn" href="#termin">Termin buchen</a>
+</div></nav>
+
+<header class="hero" id="top"><div class="wrap">
+  <div>
+    <div class="label">Barbershop · Aachen Innenstadt</div>
+    <h1>Saubere Kanten. <em>Jedes Mal.</em></h1>
+    <p class="intro">Präzise Fades, gepflegte Bärte und die klassische Nassrasur mit heißem Tuch. Ohne Wartezeit, weil du deinen Termin online buchst.</p>
+    <div class="cta"><a class="btn" href="#termin">Termin buchen →</a><a class="btn line" href="#preise">Preise ansehen</a></div>
+    <div class="facts">
+      <div><b>3</b><span>Barber-Plätze</span></div>
+      <div><b>ab 16 €</b><span>pro Schnitt</span></div>
+      <div><b>Mo–Sa</b><span>auch abends</span></div>
+    </div>
+  </div>
+  <div class="frame">
+    <img src="salon.jpg" alt="Barbershop mit zwei Spiegeln, Holztheke und schwarz-weißem Fliesenboden" fetchpriority="high">
+    <div class="stamp">Walk-ins willkommen</div>
+  </div>
+</div></header>
+
+<div class="ticker" aria-hidden="true"><div>
+  Skin Fade<span>◆</span>Bartpflege<span>◆</span>Nassrasur<span>◆</span>Kids Cut<span>◆</span>Konturen<span>◆</span>Haare &amp; Bart<span>◆</span>
+  Skin Fade<span>◆</span>Bartpflege<span>◆</span>Nassrasur<span>◆</span>Kids Cut<span>◆</span>Konturen<span>◆</span>Haare &amp; Bart<span>◆</span>
+</div></div>
+
+<section class="about" id="haltung"><div class="wrap">
+  <figure>
+    <img src="tools.jpg" alt="Scheren, Kämme und Haarschneidemaschinen ordentlich auf einer Steinablage" loading="lazy">
+    <figcaption>Jedes Werkzeug wird nach jedem Kunden desinfiziert.</figcaption>
+  </figure>
+  <div>
+    <div class="label">Über uns</div>
+    <h2>Handwerk statt Fließband.</h2>
+    <p class="lead">Bei uns bekommst du keinen Schnitt in zehn Minuten. Wir nehmen uns die Zeit, die dein Haar braucht, und sagen dir ehrlich, was zu deinem Kopf passt.</p>
+    <div class="points">
+      <div><i>I</i><div><b>Beratung zuerst</b><p>Wir schauen uns Haartyp, Wirbel und Gesichtsform an, bevor die Maschine angeht.</p></div></div>
+      <div><i>II</i><div><b>Heißes Tuch, scharfe Klinge</b><p>Konturen und Nassrasur mit Einwegklinge, Öl und Aftershave.</p></div></div>
+      <div><i>III</i><div><b>Pünktlich</b><p>Gebuchte Termine starten pünktlich. Spontan vorbeikommen geht trotzdem.</p></div></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="prices" id="preise"><div class="wrap">
+  <div class="prices-head">
+    <div><div class="label">Leistungen</div><h2>Preise</h2></div>
+    <p class="lead" style="max-width:38ch">Alle Preise inklusive Waschen und Styling. Bezahlung bar oder mit Karte.</p>
+  </div>
+  <div class="menu">
+    <div class="row"><h3>Herrenschnitt</h3><p>Schere und Maschine, klassisch oder modern</p><div class="p">24 €</div></div>
+    <div class="row"><h3>Skin Fade<span class="min">45 Min</span></h3><p>Übergang bis auf die Haut, mit Konturen</p><div class="p">28 €</div></div>
+    <div class="row"><h3>Bart trimmen</h3><p>Form, Konturen mit Klinge, Bartöl</p><div class="p">15 €</div></div>
+    <div class="row"><h3>Nassrasur<span class="min">30 Min</span></h3><p>Heißes Tuch, Rasierschaum, Klinge</p><div class="p">22 €</div></div>
+    <div class="row"><h3>Haare &amp; Bart</h3><p>Das Komplettpaket</p><div class="p">36 €</div></div>
+    <div class="row"><h3>Kids Cut</h3><p>Bis 12 Jahre</p><div class="p">16 €</div></div>
+  </div>
+</div></section>
+
+<section id="galerie"><div class="wrap">
+  <div class="label">Galerie</div>
+  <h2>Einblicke</h2>
+  <div class="gallery">
+    <button class="g1" data-src="cut.jpg" aria-label="Foto vergrößern: Barber bei einem Haarschnitt"><img src="cut.jpg" alt="Barber schneidet einem Kunden die Haare"></button>
+    <button class="g2" data-src="client.jpg" aria-label="Foto vergrößern: Kunde mit frischem Fade"><img src="client.jpg" alt="Kunde mit frischem Fade und gepflegtem Bart"></button>
+    <button class="g3" data-src="detail.jpg" aria-label="Foto vergrößern: Detailarbeit"><img src="detail.jpg" alt="Barber arbeitet konzentriert an den Konturen"></button>
+    <button class="g4" data-src="shop.jpg" aria-label="Foto vergrößern: Der Laden"><img src="shop.jpg" alt="Blick in den Laden mit rotem Produktschrank und Wartebank"></button>
+    <button class="g5" data-src="tools.jpg" aria-label="Foto vergrößern: Werkzeug"><img src="tools.jpg" alt="Werkzeugschublade mit Haarschneidemaschinen"></button>
+  </div>
+</div></section>
+<div class="lb" id="lb" hidden><img id="lbimg" alt=""><button id="lbx" type="button">Schließen ✕</button></div>
+
+<section class="book" id="termin" style="padding-top:0"><div class="wrap">
+  <div>
+    <div class="label">Termin</div>
+    <h2>Platz reservieren</h2>
+    <form id="f">
+      <fieldset><legend>Leistung</legend>
+        <div class="chips">
+          <input type="radio" name="l" id="l1" value="Herrenschnitt" checked><label for="l1">Herrenschnitt · 24 €</label>
+          <input type="radio" name="l" id="l2" value="Skin Fade"><label for="l2">Skin Fade · 28 €</label>
+          <input type="radio" name="l" id="l3" value="Haare &amp; Bart"><label for="l3">Haare &amp; Bart · 36 €</label>
+          <input type="radio" name="l" id="l4" value="Nassrasur"><label for="l4">Nassrasur · 22 €</label>
+        </div>
+      </fieldset>
+      <fieldset><legend>Uhrzeit</legend>
+        <div class="chips" id="times"></div>
+      </fieldset>
+      <div class="two">
+        <div class="field"><label for="tag">Tag</label><input id="tag" type="date" required></div>
+        <div class="field"><label for="name">Vorname</label><input id="name" required autocomplete="given-name" placeholder="Dein Name"></div>
+      </div>
+      <div><button class="btn" type="submit">Termin anfragen →</button></div>
+      <div class="done" id="done" hidden></div>
+    </form>
+  </div>
+  <div class="info">
+    <div>
+      <div class="label" style="margin-bottom:14px">Öffnungszeiten</div>
+      <div class="hours" id="hours">
+        <div data-d="1"><span>Montag</span><b>10:00 – 20:00</b></div>
+        <div data-d="2"><span>Dienstag</span><b>10:00 – 20:00</b></div>
+        <div data-d="3"><span>Mittwoch</span><b>10:00 – 20:00</b></div>
+        <div data-d="4"><span>Donnerstag</span><b>10:00 – 21:00</b></div>
+        <div data-d="5"><span>Freitag</span><b>10:00 – 21:00</b></div>
+        <div data-d="6"><span>Samstag</span><b>09:00 – 18:00</b></div>
+        <div data-d="0"><span>Sonntag</span><b>geschlossen</b></div>
+      </div>
+    </div>
+    <div>
+      <div class="label" style="margin-bottom:14px">So findest du uns</div>
+      <div class="addr">Musterstraße 12<br>52062 Aachen<small>Zwei Minuten vom Elisenbrunnen · Tel. 0241 000 000</small></div>
+    </div>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <span>© Kante Barbers · Impressum · Datenschutz</span>
+</div></footer>
+
+<script>
+// Uhrzeiten
+const T=["10:00","11:00","12:30","14:00","15:30","17:00","18:30"];
+document.getElementById('times').innerHTML=T.map((t,i)=>`<input type="radio" name="t" id="t${i}" value="${t}" ${i===2?'checked':''}><label for="t${i}">${t}</label>`).join('');
+// Datum: morgen vorbelegen
+const d=new Date();d.setDate(d.getDate()+1);document.getElementById('tag').value=d.toISOString().slice(0,10);
+// heutigen Tag markieren
+const today=new Date().getDay();document.querySelector(`#hours [data-d="${today}"]`)?.classList.add('today');
+// Buchung (Demo)
+document.getElementById('f').addEventListener('submit',e=>{e.preventDefault();
+  const f=e.target,l=f.l.value,t=f.t.value,n=document.getElementById('name').value.trim()||'du';
+  const day=new Date(document.getElementById('tag').value).toLocaleDateString('de-DE',{weekday:'long',day:'numeric',month:'long'});
+  const box=document.getElementById('done');box.hidden=false;
+  box.textContent=`Danke, ${n}! ${l} am ${day} um ${t} Uhr ist angefragt. (Demo: In der echten Website bekommt der Laden diese Anfrage per E-Mail.)`;});
+// Lightbox
+const lb=document.getElementById('lb'),lbimg=document.getElementById('lbimg');
+document.querySelectorAll('.gallery button').forEach(b=>b.addEventListener('click',()=>{lbimg.src=b.dataset.src;lbimg.alt=b.querySelector('img').alt;lb.hidden=false;document.getElementById('lbx').focus();}));
+function closeLb(){lb.hidden=true;}
+document.getElementById('lbx').addEventListener("click",closeLb);
+lb.addEventListener('click',e=>{if(e.target===lb)closeLb();});
+document.addEventListener('keydown',e=>{if(e.key==="Escape")closeLb();});
+</script>
+
+</body>
+</html>
